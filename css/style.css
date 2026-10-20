@@ -1,4 +1,4 @@
-/* scoreboard-site — ubiconet */
+/* sports-miniboards site */
 
 :root {
   --bg: #0a1f2c;
@@ -190,4 +190,116 @@ hr {
   color: var(--muted);
   font-size: 0.82rem;
   line-height: 1.5;
+}
+
+/* ---- feature highlight layout (nhl page) ---- */
+.feature {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  align-items: center;
+  margin: 36px 0;
+}
+@media (min-width: 780px) {
+  .feature { grid-template-columns: 1.1fr 1fr; gap: 28px; }
+  .feature.reverse > .feature-media { order: 2; }
+  .feature.reverse > .feature-body { order: 1; }
+}
+.feature-media img,
+.feature-media video {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--rule);
+  background: var(--bg-elev);
+  display: block;
+}
+.feature-media video {
+  /* Phone-shot demo is portrait; constrain the demo frame so it doesn't blast full-width */
+  max-height: 380px;
+  object-fit: contain;
+}
+.feature-body h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: var(--gold);
+}
+.feature-body p {
+  color: var(--text);
+  font-size: 1rem;
+}
+.feature-body .feat-meta {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: 12px;
+}
+
+/* getting-started steps */
+.steps {
+  counter-reset: step;
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 32px;
+}
+.steps > li {
+  counter-increment: step;
+  position: relative;
+  padding: 18px 0 22px 64px;
+  border-bottom: 1px solid var(--rule);
+}
+.steps > li:last-child { border-bottom: 0; }
+.steps > li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 16px;
+  width: 44px;
+  height: 44px;
+  border-radius: 22px;
+  background: var(--gold);
+  color: #11293a;
+  font-weight: 700;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.steps h3 {
+  margin: 0 0 8px;
+  color: var(--text);
+  font-size: 1.05rem;
+}
+.steps h3 .accent { color: var(--gold); }
+.steps .step-figure {
+  margin: 14px 0 0;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 380px;
+}
+.steps .step-figure img {
+  width: 100%;
+  display: block;
+}
+
+.callout {
+  background: var(--bg-card);
+  border-left: 3px solid var(--gold);
+  border-radius: 4px;
+  padding: 12px 16px;
+  margin: 16px 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+.callout strong { color: var(--text); }
+
+.kbd {
+  display: inline-block;
+  background: var(--bg-elev);
+  border: 1px solid var(--rule);
+  border-bottom-width: 2px;
+  padding: 0 6px;
+  border-radius: 4px;
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 0.85em;
+  color: var(--gold);
 }

@@ -20,7 +20,9 @@
   <h2>NHL Scoreboard</h2>
   <p class="lede">A live, always-on scoreboard for your team's games. Connect it to wifi and pick your teams - it does the rest.</p>
 
-  <div class="placeholder">[ hero photo: NHL Scoreboard on a desk, score matrices lit, color screen showing a live game ]</div>
+  <figure style="margin: 24px 0;">
+    <img src="assets/nhl-hero.jpg" alt="NHL Scoreboard on a desk, color screen showing a live game, score matrices lit" style="width: 100%; border-radius: 8px; border: 1px solid var(--rule);">
+  </figure>
 
   <h3>Buy one</h3>
   <div class="buy">
@@ -28,34 +30,86 @@
     <p class="terms">Local pickup in <strong>[Your city, ON]</strong>. Cash or e-Transfer. Message to arrange a time — happy to demo before you commit. No shipping.</p>
   </div>
 
+  <p style="margin-top: 24px;"><a href="getting-started.html">Need help setting it up? See the getting-started guide →</a></p>
+
   <hr>
 
-  <h3>What you see</h3>
+  <h3>What it does</h3>
+
+  <!-- Feature 1: live in real time -->
+  <section class="feature">
+    <div class="feature-media">
+      <video controls preload="metadata" poster="assets/nhl-goal-frame.jpg">
+        <source src="assets/nhl-demo.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="feature-body">
+      <h3>Live, in real time</h3>
+      <p>Score, period, shots on goal, and the penalty count update from the official NHL feed. When the puck crosses the line, the color screen flips to <strong>GOAL!!!</strong> in big orange letters and the horn fires.</p>
+      <p class="feat-meta">5-second poll while a followed game is in progress.</p>
+    </div>
+  </section>
+
+  <!-- Feature 2: glanceable from across the room (reverse) -->
+  <section class="feature reverse">
+    <div class="feature-media">
+      <img src="assets/nhl-boards.jpg" alt="Close-up of the score matrices, period matrix, color screen, and penalty lights during a game">
+    </div>
+    <div class="feature-body">
+      <h3>Glanceable from across the room</h3>
+      <p>Two 8×8 LED matrices carry the score, a third shows the period, and a 4-digit display carries the game clock. <strong>No squinting at a phone.</strong> Four LEDs — two per team — light up when a team is short-handed; the color screen names who and how much time is left.</p>
+      <p class="feat-meta">225 × 120 × 40 mm on the desk. The matrices are visible across a typical living room.</p>
+    </div>
+  </section>
+
+  <!-- Feature 3: league news in standby -->
+  <section class="feature">
+    <div class="feature-media">
+      <img src="assets/nhl-news-oilers.jpg" alt="Close-up of the color screen showing a league news headline">
+    </div>
+    <div class="feature-body">
+      <h3>League news when there's no game</h3>
+      <p>When your team's not playing — or the game's between periods — the color screen shows recent NHL headlines. It refreshes every 30 minutes and keeps your living-room wall informed without you opening a tab.</p>
+      <p class="feat-meta">Plus: standings, upcoming games with countdowns to puck drop, and the period clock becomes a wall clock.</p>
+    </div>
+  </section>
+
+  <!-- Feature 4: 60-second setup -->
+  <section class="feature reverse">
+    <div class="feature-media">
+      <img src="assets/nhl-setup-portal.jpg" alt="Phone showing the NHL Scoreboard captive portal — Wi-Fi config and team priority dropdowns">
+    </div>
+    <div class="feature-body">
+      <h3>60-second Wi-Fi setup</h3>
+      <p>Plug it in. Join <code>NHL_SCOREBOARD</code> from your phone. Pick your home Wi-Fi, pick up to three followed teams, save. <strong>Done.</strong> No app, no account, no subscription. Next time it boots, it just works — and updates itself in the background.</p>
+      <p class="feat-meta">Captive portal · 2.4 GHz Wi-Fi · WPA2/WPA3.</p>
+    </div>
+  </section>
+
+  <!-- Feature 5: battery-powered + cordless -->
+  <section class="feature">
+    <div class="feature-media">
+      <img src="assets/nhl-team-picker.jpg" alt="The captive portal with favorite team priorities filled in: TOR, EDM, CGY">
+    </div>
+    <div class="feature-body">
+      <h3>Up to three followed teams. Battery-powered.</h3>
+      <p>Set priority 1, 2, 3 — the board tracks all of them. When two of your teams are on at once, the color screen carries one and the matrices carry the other. About 4–5 hours on the internal battery; plug USB-C for unlimited runtime.</p>
+      <p class="feat-meta">Belt-and-suspenders for nights when several of your teams are playing.</p>
+    </div>
+  </section>
+
+  <hr>
+
+  <h3>What you see on the device</h3>
   <ul class="facts">
-    <li><span class="key">Color screen</span><span class="val">2.0″ display showing team logos, score, period, clock, shots on goal, and league news</span></li>
+    <li><span class="key">Color screen</span><span class="val">2.0″ display showing team logos, score, period, clock, shots on goal, league news, active penalties</span></li>
     <li><span class="key">Score digits</span><span class="val">Two large 8×8 LED matrices — home and away — readable across the room</span></li>
     <li><span class="key">Period indicator</span><span class="val">Third 8×8 matrix shows 1, 2, 3, OT, or SO</span></li>
-    <li><span class="key">Game clock</span><span class="val">Bright 4-digit display</span></li>
+    <li><span class="key">Game clock</span><span class="val">Bright 4-digit display; shows the current time when idle</span></li>
     <li><span class="key">Penalty lights</span><span class="val">Four LEDs — two for each team — light up while a team is short-handed. The color screen shows who has the penalties and how much time remains.</span></li>
-    <li><span class="key">Goal horn</span><span class="val">Sounds when your team scores!</span></li>
+    <li><span class="key">Goal horn</span><span class="val">Sounds when your team scores</span></li>
     <li><span class="key">Battery</span><span class="val">Internal, charges over USB-C, ~4–5 hours per charge, runs while plugged in</span></li>
   </ul>
-
-  <hr>
-
-  <h3>No Game Today?</h3>
-  <p>It rotates upcoming games with a countdown to puck drop, shows your division standings, and scrolls the latest NHL headlines. Period timer shows the current time.</p>
-
-  <hr>
-
-  <h3>Setup is 60 seconds</h3>
-  <ol>
-    <li>Plug it in (or run on battery).</li>
-    <li>On your phone, join the <code>NHL_SCOREBOARD</code> Wi-Fi network it broadcasts.</li>
-    <li>Pick your home Wi-Fi, pick your teams, save.</li>
-    <li>Done. It reboots into live mode (or standby, depending on the schedule).</li>
-  </ol>
-  <p>No app to install. No account to create. No subscription.</p>
 
   <hr>
 
@@ -72,10 +126,8 @@
     <li><span class="key">OTA updates</span><span class="val">Automatic — you do nothing</span></li>
   </ul>
 
-  <div class="placeholder">[ product photos: front three-quarter, back showing USB-C, side profile ]</div>
-  <div class="placeholder">[ video: live demo — score change, goal horn, period advance ]</div>
-
-  <p style="margin-top: 32px;"><a href="index.html">&larr; Back to shop</a></p>
+  <p style="margin-top: 32px;"><a href="getting-started.html">Setting it up: full walkthrough →</a></p>
+  <p><a href="index.html">&larr; Back to shop</a></p>
 
   <div class="fine">
     <p>NHL, the NHL Shield, and team logos and marks are the property of the NHL and its teams. This product is an independent, unofficial fan-made device and is not affiliated with, endorsed by, or sponsored by the National Hockey League.</p>
