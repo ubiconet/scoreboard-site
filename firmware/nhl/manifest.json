@@ -1,13 +1,13 @@
 {
-  "version": "v3.84",
+  "version": "v3.86",
   "file": "nhl_scoreboard_latest.bin",
   "url": "https://raw.githubusercontent.com/ubiconet/NHLScoreboard/main/releases/nhl_scoreboard_latest.bin",
   "factoryFile": "nhl_scoreboard_latest_factory.bin",
-  "factoryUrl": "https://raw.githubusercontent.com/ubiconet/NHLScoreboard/main/releases/nhl_scoreboard_latest_factory.bin",
+  "factoryUrl": "https://sports-miniboards.com/firmware/nhl/nhl_scoreboard_latest_factory.bin",
   "bootloaderFile": "nhl_scoreboard_latest_bootloader.bin",
-  "bootloaderUrl": "https://raw.githubusercontent.com/ubiconet/NHLScoreboard/main/releases/nhl_scoreboard_latest_bootloader.bin",
+  "bootloaderUrl": "https://sports-miniboards.com/firmware/nhl/nhl_scoreboard_latest_bootloader.bin",
   "partitionsFile": "nhl_scoreboard_latest_partitions.bin",
-  "partitionsUrl": "https://raw.githubusercontent.com/ubiconet/NHLScoreboard/main/releases/nhl_scoreboard_latest_partitions.bin",
+  "partitionsUrl": "https://sports-miniboards.com/firmware/nhl/nhl_scoreboard_latest_partitions.bin",
   "bootApp0File": "nhl_scoreboard_latest_boot_app0.bin",
-  "bootApp0Url": "https://raw.githubusercontent.com/ubiconet/NHLScoreboard/main/releases/nhl_scoreboard_latest_boot_app0.bin"
+  "bootApp0Url": "https://sports-miniboards.com/firmware/nhl/nhl_scoreboard_latest_boot_app0.bin"
 }
