@@ -55,22 +55,14 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .site-header h1 a { color: var(--text); }
 
-/* brand logo in the header — wordmark only (no tagline) so it stays legible small */
+/* brand logo in the header — full lockup (wordmark + tagline) */
 .brand-logo {
   display: block;
-  height: 40px;
+  height: 54px;
   width: auto;
 }
 @media (min-width: 720px) {
-  .brand-logo { height: 52px; }
-}
-
-/* full lockup (wordmark + tagline) — landing-page hero only */
-.brand-lockup {
-  display: block;
-  width: 100%;
-  max-width: 540px;
-  margin: 0 auto;
+  .brand-logo { height: 72px; }
 }
 .site-header nav a {
   margin-left: 18px;
@@ -209,6 +201,15 @@ hr {
   font-size: 0.82rem;
   line-height: 1.5;
 }
+.fine .foot-links {
+  margin-bottom: 10px;
+}
+.fine .foot-links a {
+  color: var(--muted);
+  margin-right: 16px;
+  font-size: 0.86rem;
+}
+.fine .foot-links a:hover { color: var(--text); }
 
 /* ---- feature highlight layout (nhl page) ---- */
 .feature {
