@@ -252,6 +252,117 @@ hr {
   margin-top: 12px;
 }
 
+/* ---- landing-page hero, stats, how-to, strip ---- */
+.hero-figure {
+  margin: 26px 0 20px;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.hero-figure img { width: 100%; display: block; }
+
+.cta-row { margin: 22px 0 4px; }
+.btn {
+  display: inline-block;
+  background: var(--gold);
+  color: #11293a;
+  font-weight: 700;
+  font-size: 0.98rem;
+  padding: 11px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.btn:hover { background: #ffc93f; text-decoration: none; }
+
+.stats {
+  list-style: none;
+  padding: 0;
+  margin: 34px 0 8px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+@media (min-width: 560px) {
+  .stats { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+}
+.stats li {
+  border-left: 2px solid var(--gold);
+  padding: 4px 0 4px 14px;
+  margin: 0;
+}
+.stat-num {
+  display: block;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+.stat-label {
+  display: block;
+  color: var(--muted);
+  font-size: 0.86rem;
+  margin-top: 3px;
+}
+
+.howto {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 8px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  counter-reset: howto;
+}
+@media (min-width: 700px) {
+  .howto { grid-template-columns: repeat(3, 1fr); gap: 26px; }
+}
+.howto li {
+  counter-increment: howto;
+  margin: 0;
+  padding-left: 38px;
+  position: relative;
+}
+.howto li::before {
+  content: counter(howto);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 13px;
+  background: var(--gold);
+  color: #11293a;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.howto h4 {
+  margin: 2px 0 6px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.howto p { margin: 0; font-size: 0.93rem; color: var(--muted); }
+
+.strip {
+  background: var(--bg-card);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--gold);
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin: 34px 0 24px;
+}
+.strip h3 { margin: 0 0 8px; color: var(--gold); }
+.strip p { margin: 0; color: var(--text); }
+
+.card .card-img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 14px;
+}
+
 /* ---- compact feature strip (custom colours) ---- */
 .feature-mini {
   display: grid;

@@ -4,7 +4,22 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Getting started — Sports MiniBoards</title>
-<meta name="description" content="Step-by-step setup for the NHL Scoreboard: first power-up, Wi-Fi, team picker, manual mode, trivia mode.">
+<meta name="description" content="Step-by-step setup for the NHL Scoreboard: first power-up, Wi-Fi, team picker, trivia night, manual mode, and troubleshooting.">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<link rel="canonical" href="https://sports-miniboards.com/getting-started.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sports MiniBoards">
+<meta property="og:title" content="Getting started — Sports MiniBoards">
+<meta property="og:description" content="Step-by-step setup for the NHL Scoreboard: first power-up, Wi-Fi, team picker, trivia night, and manual mode.">
+<meta property="og:url" content="https://sports-miniboards.com/getting-started.html">
+<meta property="og:image" content="https://sports-miniboards.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Getting started — Sports MiniBoards">
+<meta name="twitter:description" content="Step-by-step setup for the NHL Scoreboard: first power-up, Wi-Fi, team picker, trivia night, and manual mode.">
+<meta name="twitter:image" content="https://sports-miniboards.com/assets/og.png">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -25,69 +40,103 @@
   <ol class="steps">
 
     <li>
-      <h3>Power up</h3>
-      <p>Plug the USB-C cable into the back of the board. Plug the other end into any 5 V / 2 A source — a phone charger, a USB battery pack, or a computer. The color screen lights up with a startup splash, then settles on the <code>NHL_SCOREBOARD</code> setup screen.</p>
+      <h3>Power it up</h3>
+      <p>Plug the USB-C cable into the back of the board and the other end into any 5 V / 2 A source — a phone charger, a USB battery pack, a computer. The color screen shows a startup splash, then switches to the setup instructions, including the name and password of the Wi-Fi network it's broadcasting.</p>
       <div class="callout">
-        <strong>Battery option:</strong> leave it plugged in to charge for an hour or two before the first time you take it cordless. A full charge runs the board roughly 3 hours.
+        <strong>Waiting for the battery?</strong> Leave it plugged in for an hour or two before the first time you take it cordless. A full charge runs the board roughly 3 hours.
       </div>
     </li>
 
     <li>
-      <h3>Connect your phone to the board's Wi-Fi</h3>
-      <p>The board broadcasts its own Wi-Fi network for setup: <code>NHL_SCOREBOARD</code>. On your phone, open Settings → Wi-Fi, pick <code>NHL_SCOREBOARD</code>, and connect. The network is open by default — no password — so don't leave this on a public network.</p>
+      <h3>Join the board's Wi-Fi</h3>
+      <p>The board runs its own network so you can configure it. On your phone, open Settings → Wi-Fi and connect to <code>NHL_SCOREBOARD</code>. The password is <span class="kbd">score1234</span> — it's also printed on the board's own screen if you'd rather not look it up.</p>
       <figure class="step-figure">
-        <img src="assets/nhl-wifi-list.jpg" alt="Android phone Wi-Fi list showing NHL_SCOREBOARD at the top of available networks">
+        <img src="assets/nhl-wifi-list.jpg" alt="Android phone Wi-Fi list with NHL_SCOREBOARD at the top of the available networks">
       </figure>
+    </li>
+
+    <li>
+      <h3>Open the setup page</h3>
+      <p>Your phone should pop the setup page open by itself. If it doesn't, open a browser and go to <span class="kbd">192.168.4.1</span>.</p>
       <div class="callout">
-        <strong>If the captive portal doesn't auto-open:</strong> open any browser on your phone and navigate to <span class="kbd">192.168.4.1</span> (the board's setup page). On Android, signing in opens it. On iOS, the same.
+        <strong>If the portal won't open:</strong> some phones cache the captive-portal intent and won't re-trigger it. Turn Wi-Fi off and on, reconnect to <code>NHL_SCOREBOARD</code>, then hit <span class="kbd">192.168.4.1</span> directly.
       </div>
     </li>
 
     <li>
-      <h3>Pick your home Wi-Fi and your teams</h3>
-      <p>The captive portal shows a single form: Wi-Fi network name, password, and three team priority dropdowns. Pick your home Wi-Fi from the dropdown (or type it manually for hidden networks), enter the password, and select up to three teams in priority order — Priority 1 is the one that gets the color screen.</p>
+      <h3>Pick your Wi-Fi and your teams</h3>
+      <p>It's one short form. Choose your home network from the <strong>Nearby Wi-Fi Networks</strong> list (or pick <em>Enter network manually</em> for a hidden network) and type in the password. Then set your three <strong>Favorite Team Priorities</strong> — Priority 1 is the primary team and gets the color screen; if two of your teams are on at once, the second one takes the LED matrices.</p>
       <figure class="step-figure">
-        <img src="assets/nhl-setup-portal.jpg" alt="The captive portal form with Wi-Fi fields and three team priority dropdowns">
+        <img src="assets/nhl-setup-portal.jpg" alt="The setup page with Nearby Wi-Fi Networks, Wi-Fi name and password, and the three team priority dropdowns">
       </figure>
-      <p>Tap <strong>Save &amp; Connect</strong>. The board reboots (~30 seconds) and joins your home Wi-Fi.</p>
-      <div class="callout">
-        <strong>Don't change Wi-Fi?</strong> leave the Wi-Fi fields alone and just pick teams. Saving a team-only change doesn't drop the connection.
-      </div>
+      <p>Two more things worth setting while you're here:</p>
+      <ul>
+        <li><strong>Display Time Zone</strong> — used for game times, countdowns and the idle clock. Get this right and your board's times match your wall clock.</li>
+        <li><strong>Enable audio output</strong> — the master switch for the goal horn and the period buzzer. It's on by default; if the board is silent, this is the first place to look.</li>
+      </ul>
+      <p>Then hit <strong>Save &amp; Connect</strong>. The board reboots (about 30 seconds) and joins your home Wi-Fi.</p>
     </li>
 
     <li>
-      <h3>Wait for first sync</h3>
-      <p>The board shows an idle clock on the matrices while it talks to the NHL feed (~30–60 seconds). Once your team's next game is within the lead time, the color screen flips to the live game and the matrices carry the score.</p>
-      <p>You're done. The board runs itself from here.</p>
+      <h3>Wait for the first sync</h3>
+      <p>While the board catches up, the matrices show an idle clock and the color screen shows a setup message. Once it has the schedule, it settles into standby: upcoming games with countdowns, standings, and league headlines, rotating every few seconds.</p>
+      <p>When one of your teams goes live, the board switches itself over — usually within about a minute of puck drop. When the game ends, the final score stays put for two minutes before it heads back to standby.</p>
     </li>
 
   </ol>
 
   <hr>
 
-  <h3>Modes</h3>
-  <p>The board has a few operating modes you can switch between from the captive portal. Pick the one that fits what you're doing.</p>
+  <h3>The setup page, in full</h3>
+  <p>Everything the board can be told to do, all in one place. You can come back to it any time — see the note below on how to reach it once the board is on your own Wi-Fi.</p>
 
-  <h4 style="margin-top: 22px; color: var(--gold); font-size: 1rem;">Manual Mode</h4>
-  <p>Full manual control of the display. Useful for a kid's game, a charity match, or any sport where you're calling your own score from the bench. From a dedicated page you can set the clock countdown, scores, period, which penalty LEDs are lit, and per-team shots.</p>
-  <figure class="step-figure">
-    <img src="assets/nhl-manual-mode.jpg" alt="Captive portal showing the Manual Mode entry with an Open Manual Mode button">
-  </figure>
+  <ul class="facts">
+    <li><span class="key">Nearby Wi-Fi Networks</span><span class="val">Scan and pick your network, or enter it manually if it isn't listed</span></li>
+    <li><span class="key">Wi-Fi Network Name / Password</span><span class="val">The home network the board joins</span></li>
+    <li><span class="key">Favorite Team Priorities</span><span class="val">Priority 1 (primary), Priority 2, Priority 3 — up to three teams, changeable whenever you like</span></li>
+    <li><span class="key">Display Time Zone</span><span class="val">Drives game times, countdowns and the idle clock</span></li>
+    <li><span class="key">Display current time</span><span class="val">Show the clock on the score boards when no game is live</span></li>
+    <li><span class="key">Enable audio output</span><span class="val">Master switch for the goal horn and the period buzzer</span></li>
+    <li><span class="key">Hibernate between games</span><span class="val">Displays go dark and the board sleeps between 5-minute game checks, then wakes for puck drop. Power-cycle the board to use the portal while it's hibernating</span></li>
+    <li><span class="key">Board Version</span><span class="val">Board V0.1, V1.0, or V1.1 (battery sense). A change takes effect after a reboot</span></li>
+    <li><span class="key">Trivia Mode</span><span class="val">Run a trivia round</span></li>
+    <li><span class="key">Manual Mode</span><span class="val">Drive the board yourself</span></li>
+    <li><span class="key">Diagnostics</span><span class="val">Display test, audio test, and the demo game</span></li>
+    <li><span class="key">Firmware Update</span><span class="val">Check for an update, or upload a firmware file by hand</span></li>
+  </ul>
+
+  <div class="callout">
+    <strong>Getting back to the setup page later:</strong> the board's setup network is only broadcast when it doesn't have a home network saved, so after setup you reach the page from your own Wi-Fi. The board prints its address on the color screen at boot — if you can't find it, power-cycle and the setup network comes back. Hibernate also takes the portal offline while it sleeps, so power-cycle if the page won't load.
+  </div>
+
+  <hr>
+
+  <h3>Modes</h3>
+  <p>Two extra modes, both opened from the setup page.</p>
 
   <h4 style="margin-top: 22px; color: var(--gold); font-size: 1rem;">Trivia Mode</h4>
-  <p>Hockey trivia night on the scoreboard. <strong>750 questions, 15 per round</strong> — the board puts up a question and you answer A/B/C/D from your phone. Three wrong answers and you're out. Play it solo against the board, or pass the phone around the room and keep score between you; the board keeps the high score.</p>
+  <p><strong>15 questions, 10 seconds each.</strong> Answer fast for up to 100 points a question — and it gets harder as you go, ramping 5 easy, 5 medium, 5 hard. Three wrong answers and you're benched. The board keeps the high score, so the same person doesn't have to keep winning.</p>
+  <p>There's also <strong>Multiplayer Night</strong>: up to 15 players join from their own phones by a shared link, everyone plays the same questions, and the fastest correct answer scores the most. Perfect for a living-room final.</p>
   <figure class="step-figure">
-    <img src="assets/nhl-trivia-mode.jpg" alt="Captive portal entry for Trivia Mode, describing 750 questions and 15 per round">
+    <img src="assets/nhl-trivia-mode.jpg" alt="The trivia page on the setup portal, describing 15 questions and the multiplayer option">
+  </figure>
+
+  <h4 style="margin-top: 22px; color: var(--gold); font-size: 1rem;">Manual Mode</h4>
+  <p>Full manual control of the display — for a kid's game, a charity match, a scrimmage, or any sport where you're calling the score yourself. You get the clock, the period length, the period, and for both HOME and GUEST: score, shots, and two penalty indicators each. There's a Start button for the game and a period-length setting, so the next period reloads at the length you choose.</p>
+  <figure class="step-figure">
+    <img src="assets/nhl-manual-mode.jpg" alt="The manual mode page in the setup portal">
   </figure>
 
   <hr>
 
   <h3>Troubleshooting</h3>
   <ul>
-    <li><strong>No live game showing up.</strong> Check that you've picked teams in the setup portal (Priority 1, 2, 3) and that the next game is within ~24 hours. The board polls the schedule once a minute; updates can take up to 60 s to land.</li>
-    <li><strong>Setup portal won't open.</strong> Some phones cache the captive-portal intent. After connecting to <code>NHL_SCOREBOARD</code>, open a browser and go to <span class="kbd">192.168.4.1</span> directly.</li>
-    <li><strong>Score hasn't changed in a while.</strong> The board pulls a fresh feed every 5 seconds while a game is live; if it's been flat for 5+ minutes and the game is supposed to be going, you might be looking at an intermission. Check the period matrix — it's blank or showing a dash during intermissions.</li>
     <li><strong>No sound?</strong> Check the settings page and make sure sound is enabled in the settings.</li>
+    <li><strong>Setup portal won't open.</strong> Some phones cache the captive-portal intent. After connecting to <code>NHL_SCOREBOARD</code>, open a browser and go to <span class="kbd">192.168.4.1</span> directly.</li>
+    <li><strong>No live game showing up.</strong> Check that you've picked teams in the setup portal (Priority 1, 2, 3) and that the next game is on the schedule. The board checks the schedule once a minute, so it can take up to 60 seconds to notice a game has started.</li>
+    <li><strong>The board went dark.</strong> Hibernate between games is on by default — the displays sleep between 5-minute checks and wake for puck drop. Power-cycle the board to bring the setup page back.</li>
+    <li><strong>Times look wrong.</strong> The Display Time Zone setting drives game times, countdowns and the idle clock. Set it in the setup page.</li>
+    <li><strong>Score hasn't changed in a while.</strong> The board pulls a fresh feed every 5 seconds while a game is live; if it's been flat for 5+ minutes and the game is supposed to be going, you might be looking at an intermission. Check the period matrix — it's blank or showing a dash during intermissions.</li>
   </ul>
 
   <p style="margin-top: 32px;"><a href="nhl.html">&larr; Back to the NHL Scoreboard</a></p>
