@@ -252,6 +252,38 @@ hr {
   margin-top: 12px;
 }
 
+/* ---- compact feature strip (custom colours) ---- */
+.feature-mini {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  align-items: center;
+  margin: 32px 0;
+  padding: 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+}
+@media (min-width: 640px) {
+  .feature-mini { grid-template-columns: 260px 1fr; gap: 22px; }
+}
+.feature-mini-media img {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid var(--rule);
+  display: block;
+}
+.feature-mini-body h3 {
+  margin: 0 0 6px;
+  color: var(--gold);
+  font-size: 1.05rem;
+}
+.feature-mini-body p {
+  margin: 0;
+  font-size: 0.94rem;
+  color: var(--muted);
+}
+
 /* getting-started steps */
 .steps {
   counter-reset: step;
