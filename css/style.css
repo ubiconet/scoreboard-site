@@ -367,6 +367,22 @@ hr {
   border-radius: 6px;
   margin-bottom: 14px;
 }
+/* video in the product card — same 16:9 box as the image it replaces */
+.card .card-video {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #000;
+  display: block;
+}
+/* keep the three cards' media blocks the same height */
+.card .placeholder {
+  aspect-ratio: 16 / 9;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
 
 /* promo video at the top of the product page */
 .promo {
