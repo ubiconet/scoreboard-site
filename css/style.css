@@ -368,6 +368,23 @@ hr {
   margin-bottom: 14px;
 }
 
+/* promo video at the top of the product page */
+.promo {
+  margin: 24px 0 8px;
+}
+.promo video {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--rule);
+  background: #000;
+}
+.promo figcaption {
+  color: var(--muted);
+  font-size: 0.86rem;
+  padding-top: 8px;
+}
+
 /* ---- compact feature strip (custom colours) ---- */
 .feature-mini {
   display: grid;
