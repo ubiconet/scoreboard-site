@@ -54,9 +54,33 @@
 
   <hr>
 
-  <h3>What it does</h3>
+  <h2 class="section-title">What it does</h2>
 
-  <!-- Feature 1: live in real time -->
+  <!-- 1. 60-second Wi-Fi setup (small image, top of the list) -->
+  <section class="feature feature-sm">
+    <div class="feature-media">
+      <img src="assets/nhl-setup-portal.jpg" alt="Phone showing the NHL MiniBoard captive portal with the Wi-Fi fields and team priority dropdowns">
+    </div>
+    <div class="feature-body">
+      <h3>60-second Wi-Fi setup</h3>
+      <p>Plug it in. Join <code>NHL_SCOREBOARD</code> from your phone, pick your home Wi-Fi, save. <strong>Done.</strong> No app, no account, no subscription. Next time it boots, it just works.</p>
+      <p class="feat-meta">Captive portal · 2.4 GHz Wi-Fi · WPA2/WPA3.</p>
+    </div>
+  </section>
+
+  <!-- 2. Team setup (small image, just below the Wi-Fi setup) -->
+  <section class="feature feature-sm reverse">
+    <div class="feature-media">
+      <img src="assets/nhl-team-picker.jpg" alt="The captive portal with favorite team priorities filled in: TOR, EDM, CGY">
+    </div>
+    <div class="feature-body">
+      <h3>Team setup</h3>
+      <p>Choose up to three teams to follow, in priority order. Priority 1 gets the color screen. When two of your teams are on at once, the second one takes the LED matrices.</p>
+      <p class="feat-meta">Change your teams any time from the setup page.</p>
+    </div>
+  </section>
+
+  <!-- 3. Live, in real time -->
   <section class="feature">
     <div class="feature-media">
       <video controls preload="metadata" poster="assets/nhl-goal-frame.jpg">
@@ -70,7 +94,7 @@
     </div>
   </section>
 
-  <!-- Feature 2: desk / mantle (reverse) -->
+  <!-- 4. Desk / mantle -->
   <section class="feature reverse">
     <div class="feature-media">
       <img src="assets/nhl-live.jpg" alt="NHL MiniBoard sitting on a desk, showing a live Toronto vs Edmonton game with a penalty timer running">
@@ -82,19 +106,7 @@
     </div>
   </section>
 
-  <!-- Feature 3: trivia -->
-  <section class="feature">
-    <div class="feature-media">
-      <img src="assets/nhl-trivia-mode.jpg" alt="The trivia page on the setup portal, describing 15 questions and 10 seconds each, with a Multiplayer Night option and the high score">
-    </div>
-    <div class="feature-body">
-      <h3>Single or multi-player hockey trivia</h3>
-      <p>Hockey trivia night, run by the scoreboard. <strong>15 questions, 10 seconds each</strong> — answer fast for up to 100 points a question, and it gets harder as you go. Three wrong answers and you're benched. Play solo against the board, or run <strong>Multiplayer Night</strong> with up to 15 players joining from their own phones.</p>
-      <p class="feat-meta">750 questions in the bank — 5 easy, 5 medium and 5 hard per round. The board keeps the high score.</p>
-    </div>
-  </section>
-
-  <!-- Feature 4: league news in standby -->
+  <!-- 5. League news and standings -->
   <section class="feature">
     <div class="feature-media">
       <img src="assets/nhl-news-oilers.jpg" alt="Close-up of the color screen showing a league news headline about Connor McDavid and the Oilers">
@@ -106,35 +118,33 @@
     </div>
   </section>
 
-  <!-- Feature 4: 60-second setup -->
-  <section class="feature reverse">
-    <div class="feature-media">
-      <img src="assets/nhl-setup-portal.jpg" alt="Phone showing the NHL MiniBoard captive portal — Wi-Fi config and team priority dropdowns">
-    </div>
-    <div class="feature-body">
-      <h3>60-second Wi-Fi setup</h3>
-      <p>Plug it in. Join <code>NHL_SCOREBOARD</code> from your phone. Pick your home Wi-Fi, pick up to three followed teams, save. <strong>Done.</strong> No app, no account, no subscription. Next time it boots, it just works — and updates itself in the background.</p>
-      <p class="feat-meta">Captive portal · 2.4 GHz Wi-Fi · WPA2/WPA3.</p>
-    </div>
-  </section>
-
-  <!-- Feature 5: battery-powered + cordless -->
-  <section class="feature">
-    <div class="feature-media">
-      <img src="assets/nhl-team-picker.jpg" alt="The captive portal with favorite team priorities filled in: TOR, EDM, CGY">
-    </div>
-    <div class="feature-body">
-      <h3>Up to three followed teams. Battery-powered.</h3>
-      <p>Set priority 1, 2, 3 — the board tracks all of them. When two of your teams are on at once, the color screen carries one and the matrices carry the other. About 3 hours on the internal battery; plug USB-C for unlimited runtime.</p>
-    </div>
-  </section>
-
-  <!-- Feature 7: auto-updates -->
+  <!-- 6. Updates itself (text only) -->
   <section class="feature" style="grid-template-columns: 1fr;">
     <div class="feature-body" style="text-align: center; max-width: 580px; margin: 0 auto;">
       <h3>Updates itself</h3>
       <p>New features, schedule changes, NHL rule tweaks — they all arrive over Wi-Fi, automatically. The board checks on every reboot, downloads the newer firmware if there is one, and installs it. You don't have to do anything.</p>
       <p class="feat-meta">Firmware is fetched securely from GitHub over your home network. Nothing to download, nothing to flash.</p>
+    </div>
+  </section>
+
+  <!-- 7. Battery-powered (text only) -->
+  <section class="feature" style="grid-template-columns: 1fr;">
+    <div class="feature-body" style="text-align: center; max-width: 580px; margin: 0 auto;">
+      <h3>Battery-powered</h3>
+      <p>About 3 hours on the internal battery, so you can set it on the coffee table, the bar, or the workbench without trailing a cable. Plug it in over USB-C and it runs indefinitely.</p>
+      <p class="feat-meta">USB-C to charge or run · 5 V / 2 A.</p>
+    </div>
+  </section>
+
+  <!-- 8. Trivia (small image, bottom of the features list) -->
+  <section class="feature feature-sm">
+    <div class="feature-media">
+      <img src="assets/nhl-trivia-mode.jpg" alt="The trivia page on the setup portal, describing 15 questions and 10 seconds each, with a Multiplayer Night option and the high score">
+    </div>
+    <div class="feature-body">
+      <h3>Single or multi-player hockey trivia</h3>
+      <p>Hockey trivia night, run by the scoreboard. <strong>15 questions, 10 seconds each</strong> — answer fast for up to 100 points a question, and it gets harder as you go. Three wrong answers and you're benched. Play solo against the board, or run <strong>Multiplayer Night</strong> with up to 15 players joining from their own phones.</p>
+      <p class="feat-meta">750 questions in the bank — 5 easy, 5 medium and 5 hard per round. The board keeps the high score.</p>
     </div>
   </section>
 

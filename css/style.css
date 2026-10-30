@@ -250,6 +250,17 @@ hr {
 .fine .foot-links a:hover { color: var(--text); }
 
 /* ---- feature highlight layout (nhl page) ---- */
+/* section banner — larger + bolder than a plain h3 */
+.section-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: -0.015em;
+  margin: 34px 0 6px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--rule);
+}
+
 .feature {
   display: grid;
   grid-template-columns: 1fr;
@@ -288,6 +299,17 @@ hr {
   color: var(--muted);
   font-size: 0.85rem;
   margin-top: 12px;
+}
+
+/* smaller media block for the secondary features */
+.feature-sm .feature-media img {
+  max-width: 330px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.feature-sm.reverse .feature-media img {
+  margin-left: 0;
+  margin-right: auto;
 }
 
 /* ---- landing-page how-to, strip ---- */
