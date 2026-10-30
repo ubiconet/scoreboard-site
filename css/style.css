@@ -1,15 +1,55 @@
-/* sports-miniboards site */
+/* sports-miniboards site — design tokens
+   Full token reference: docs/design.md */
 
 :root {
-  --bg: #0a1f2c;
-  --bg-card: #11293a;
-  --bg-elev: #16344a;
-  --text: #e8eef3;
-  --muted: #94a8b8;
-  --gold: #f0b323;
-  --accent: #4ea3ff;
-  --rule: #1f3d52;
+  /* ---- colour ---- */
+  --bg:          #0a1f2c;   /* page */
+  --bg-card:     #16344a;   /* raised region (1.30:1 on --bg) */
+  --bg-elev:     #1a3a52;   /* control surface */
+  --text:        #e8eef3;   /* body text  (14.4:1 on --bg) */
+  --muted:       #94a8b8;   /* secondary  (6.9:1 on --bg) */
+  --gold:        #f0b323;   /* accent / primary action (9.0:1 on --bg) */
+  --accent:      #4ea3ff;   /* link (6.4:1 on --bg) */
+  --rule:        #2a4d67;   /* hairline divider */
+  --rule-strong: #4a7796;   /* component boundary (3.5:1 on --bg) */
+  --on-gold:     #11293a;   /* text on a gold fill (8.0:1) */
+
+  /* ---- spacing scale (H6 — nothing off-scale) ---- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  72px;
+
+  /* ---- type scale (H11 — every size is a token) ---- */
+  --text-xs:   0.78rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-md:   1.1rem;
+  --text-lg:   1.3rem;
+  --text-xl:   1.6rem;
+  --text-2xl:  1.9rem;
+
+  /* ---- radii ---- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* ---- focus (H38) ---- */
+  --focus-ring: 2px solid var(--gold);
+  --focus-offset: 3px;
+
+  /* ---- motion (H33/H34) ---- */
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --dur-micro: 120ms;
+  --dur-standard: 220ms;
+
+  /* ---- measure ---- */
   --max: 880px;
+  --prose: 65ch;   /* H8 — 50–75ch line length */
 }
 
 * { box-sizing: border-box; }
@@ -26,6 +66,101 @@ a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 img { max-width: 100%; height: auto; display: block; }
+
+/* ============================================================
+   CRAFT LAYER — accessibility, motion, typography, targets.
+   Heuristic numbers refer to the design-better catalogue.
+   ============================================================ */
+
+/* H37/H38 — every interactive element shows a visible focus ring.
+   Never remove outline without this replacement. */
+a:focus-visible,
+button:focus-visible,
+video:focus-visible,
+[tabindex]:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+  border-radius: var(--radius-sm);
+}
+
+/* H41 — a focused element must never sit under the header */
+html { scroll-padding-top: var(--space-6); }
+
+/* Skip link — bypass the header for keyboard and screen-reader users */
+.skip-link {
+  position: absolute;
+  left: var(--space-4);
+  top: var(--space-4);
+  z-index: 100;
+  transform: translateY(-200%);
+  opacity: 0;
+  background: var(--gold);
+  color: var(--on-gold);
+  font-weight: 700;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-sm);
+  transition: transform var(--dur-standard) var(--ease-out),
+              opacity var(--dur-standard) var(--ease-out);
+}
+.skip-link:focus {
+  transform: translateY(0);
+  opacity: 1;
+  text-decoration: none;
+}
+
+/* H13 — headlines read deliberately, prose avoids orphans */
+h1, h2, h3, h4, .brand-lockup { text-wrap: balance; }
+p, li, figcaption { text-wrap: pretty; }
+
+/* H8 — cap the measure so lines stay 50–75 characters */
+p, li { max-width: var(--prose); }
+
+/* H12 — numbers in the spec tables line up vertically */
+.facts .val,
+.stat-num,
+.price { font-variant-numeric: tabular-nums; }
+
+/* H39 — every clickable target is at least 24x24 CSS px.
+   On touch the nav and footer links go to 44px. */
+.site-header nav a,
+.fine .foot-links a,
+.facts a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+}
+@media (pointer: coarse) {
+  .site-header nav a,
+  .fine .foot-links a { min-height: 44px; }
+}
+
+/* H33/H34 — motion stays in the 120–220ms band and eases out.
+   H35 says transform/opacity only; border/background colour are
+   included here because they never trigger layout, only paint. */
+a,
+.btn,
+.card,
+.site-header nav a {
+  transition: color var(--dur-micro) var(--ease-out),
+              background-color var(--dur-micro) var(--ease-out),
+              border-color var(--dur-micro) var(--ease-out),
+              opacity var(--dur-micro) var(--ease-out),
+              transform var(--dur-micro) var(--ease-out);
+}
+.card:hover { transform: translateY(-2px); }
+
+/* H36 — honour the user's reduced-motion preference.
+   Keep the feedback signal, drop the movement. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .card:hover { transform: none; }
+  .skip-link { transform: none; }
+}
 
 /* layout */
 .container {
@@ -89,9 +224,9 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .site-header nav a {
   color: var(--muted);
-  font-size: 0.93rem;
+  font-size: var(--text-sm);
   white-space: nowrap;
-  padding-bottom: 2px;
+  padding: var(--space-1) 0;
   border-bottom: 2px solid transparent;
 }
 .site-header nav a:hover {
@@ -104,16 +239,16 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 h2 {
-  font-size: 1.4rem;
+  font-size: var(--text-xl);
   font-weight: 600;
-  margin: 36px 0 14px;
+  margin: var(--space-6) 0 var(--space-4);
   letter-spacing: 0.01em;
 }
 
 h3 {
-  font-size: 1.05rem;
+  font-size: var(--text-md);
   font-weight: 600;
-  margin: 22px 0 8px;
+  margin: var(--space-5) 0 var(--space-2);
   color: var(--gold);
 }
 
@@ -182,9 +317,9 @@ hr {
 }
 .card {
   background: var(--bg-card);
-  border: 1px solid var(--rule);
-  border-radius: 8px;
-  padding: 18px;
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
   display: flex;
   flex-direction: column;
 }
@@ -217,7 +352,7 @@ hr {
   margin: 24px 0;
 }
 .buy .price {
-  font-size: 1.6rem;
+  font-size: var(--text-xl);
   font-weight: 700;
   color: var(--gold);
   margin: 0;
@@ -244,15 +379,15 @@ hr {
 }
 .fine .foot-links a {
   color: var(--muted);
-  margin-right: 16px;
-  font-size: 0.86rem;
+  margin-right: var(--space-4);
+  font-size: var(--text-sm);
 }
 .fine .foot-links a:hover { color: var(--text); }
 
 /* ---- feature highlight layout (nhl page) ---- */
 /* section banner — larger + bolder than a plain h3 */
 .section-title {
-  font-size: 1.7rem;
+  font-size: var(--text-2xl);
   font-weight: 700;
   color: var(--gold);
   letter-spacing: -0.015em;
@@ -288,7 +423,7 @@ hr {
 }
 .feature-body h3 {
   margin-top: 0;
-  font-size: 1.2rem;
+  font-size: var(--text-lg);
   color: var(--gold);
 }
 .feature-body p {
@@ -315,16 +450,31 @@ hr {
 /* ---- landing-page how-to, strip ---- */
 .cta-row { margin: 22px 0 4px; }
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;               /* H39 touch target */
+  padding: var(--space-3) var(--space-5);
   background: var(--gold);
-  color: #11293a;
+  color: var(--on-gold);
   font-weight: 700;
-  font-size: 0.98rem;
-  padding: 11px 22px;
-  border-radius: 6px;
+  font-size: var(--text-base);
+  border-radius: var(--radius-md);
+  border: 2px solid transparent;
   text-decoration: none;
 }
-.btn:hover { background: #ffc93f; text-decoration: none; }
+.btn:hover {
+  background: #ffc93f;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+.btn:active { transform: translateY(0); }
+.btn--quiet {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--rule-strong);
+}
+.btn--quiet:hover { background: var(--bg-elev); }
 
 .howto {
   list-style: none;
@@ -361,8 +511,8 @@ hr {
   justify-content: center;
 }
 .howto h4 {
-  margin: 2px 0 6px;
-  font-size: 1rem;
+  margin: 2px 0 var(--space-1);
+  font-size: var(--text-base);
   font-weight: 600;
 }
 .howto p { margin: 0; font-size: 0.93rem; color: var(--muted); }
@@ -441,9 +591,9 @@ hr {
   display: block;
 }
 .feature-mini-body h3 {
-  margin: 0 0 6px;
+  margin: 0 0 var(--space-1);
   color: var(--gold);
-  font-size: 1.05rem;
+  font-size: var(--text-md);
 }
 .feature-mini-body p {
   margin: 0;
