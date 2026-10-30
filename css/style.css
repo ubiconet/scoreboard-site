@@ -276,20 +276,7 @@ hr {
   margin-top: 12px;
 }
 
-/* ---- landing-page hero, stats, how-to, strip ---- */
-.hero-figure {
-  margin: 26px 0 20px;
-  border: 1px solid var(--rule);
-  border-radius: 8px;
-  overflow: hidden;
-}
-.hero-figure img {
-  width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  display: block;
-}
-
+/* ---- landing-page how-to, strip ---- */
 .cta-row { margin: 22px 0 4px; }
 .btn {
   display: inline-block;
@@ -302,37 +289,6 @@ hr {
   text-decoration: none;
 }
 .btn:hover { background: #ffc93f; text-decoration: none; }
-
-.stats {
-  list-style: none;
-  padding: 0;
-  margin: 34px 0 8px;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 14px;
-}
-@media (min-width: 560px) {
-  .stats { grid-template-columns: repeat(3, 1fr); gap: 20px; }
-}
-.stats li {
-  border-left: 2px solid var(--gold);
-  padding: 4px 0 4px 14px;
-  margin: 0;
-}
-.stat-num {
-  display: block;
-  font-size: 1.9rem;
-  font-weight: 700;
-  color: var(--gold);
-  line-height: 1.1;
-  letter-spacing: -0.01em;
-}
-.stat-label {
-  display: block;
-  color: var(--muted);
-  font-size: 0.86rem;
-  margin-top: 3px;
-}
 
 .howto {
   list-style: none;
