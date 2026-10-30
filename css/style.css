@@ -72,6 +72,20 @@ img { max-width: 100%; height: auto; display: block; }
   flex-wrap: wrap;
   gap: 8px 20px;
   align-items: center;
+  flex: 1;
+}
+/* Contact us pushed to the far right of the header row */
+.site-header nav a.nav-contact {
+  margin-left: auto;
+  padding-left: 22px;
+  border-left: 1px solid var(--rule);
+}
+@media (max-width: 680px) {
+  .site-header nav a.nav-contact {
+    margin-left: 0;
+    padding-left: 0;
+    border-left: 0;
+  }
 }
 .site-header nav a {
   color: var(--muted);
