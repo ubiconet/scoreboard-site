@@ -45,7 +45,8 @@ img { max-width: 100%; height: auto; display: block; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 10px 20px;
+  flex-wrap: wrap;
 }
 .site-header h1 {
   font-size: 1.05rem;
@@ -58,18 +59,35 @@ img { max-width: 100%; height: auto; display: block; }
 /* brand logo in the header — full lockup (wordmark + tagline) */
 .brand-logo {
   display: block;
-  height: 54px;
+  height: 46px;
   width: auto;
 }
 @media (min-width: 720px) {
-  .brand-logo { height: 72px; }
+  .brand-logo { height: 62px; }
+}
+
+/* product nav, beside the logo */
+.site-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  align-items: center;
 }
 .site-header nav a {
-  margin-left: 18px;
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: 0.93rem;
+  white-space: nowrap;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
 }
-.site-header nav a:hover { color: var(--text); }
+.site-header nav a:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+.site-header nav a.active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
 
 h2 {
   font-size: 1.4rem;
