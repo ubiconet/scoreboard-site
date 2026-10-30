@@ -358,6 +358,8 @@ hr {
 
 .card .card-img {
   width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
   border-radius: 6px;
   margin-bottom: 14px;
 }
@@ -496,4 +498,15 @@ hr {
   font-family: ui-monospace, Menlo, monospace;
   font-size: 0.85em;
   color: var(--gold);
+}
+
+/* full-width product photo on a product page */
+.board-photo {
+  margin: 22px 0 26px;
+}
+.board-photo img {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--rule);
+  display: block;
 }
