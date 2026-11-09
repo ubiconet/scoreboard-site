@@ -11,7 +11,7 @@
   --gold:        #f0b323;   /* accent / primary action (9.0:1 on --bg) */
   --accent:      #4ea3ff;   /* link (6.4:1 on --bg) */
   --rule:        #2a4d67;   /* hairline divider */
-  --rule-strong: #4a7796;   /* component boundary (3.5:1 on --bg) */
+  --rule-strong: #5190aa;   /* component boundary (3.64:1 on --bg-card, 4.75:1 on --bg) */
   --on-gold:     #11293a;   /* text on a gold fill (8.0:1) */
 
   /* ---- spacing scale (H6 — nothing off-scale) ---- */
@@ -251,6 +251,12 @@ a,
 .site-header nav a.active {
   color: var(--gold);
   border-bottom-color: var(--gold);
+}
+/* Seasonal campaign link — a different colour, not the active underline,
+   so it reads as "a thing happening now" rather than "the page you are on". */
+.site-header nav a.seasonal {
+  color: var(--gold);
+  font-weight: 600;
 }
 
 h2 {
