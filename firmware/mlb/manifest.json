@@ -1,0 +1,13 @@
+{
+  "version": "v2.84",
+  "file": "mlb_scoreboard_latest.bin",
+  "url": "https://sports-miniboards.com/firmware/mlb/mlb_scoreboard_latest.bin",
+  "factoryFile": "mlb_scoreboard_latest_factory.bin",
+  "factoryUrl": "https://sports-miniboards.com/firmware/mlb/mlb_scoreboard_latest_factory.bin",
+  "bootloaderFile": "mlb_scoreboard_latest_bootloader.bin",
+  "bootloaderUrl": "https://sports-miniboards.com/firmware/mlb/mlb_scoreboard_latest_bootloader.bin",
+  "partitionsFile": "mlb_scoreboard_latest_partitions.bin",
+  "partitionsUrl": "https://sports-miniboards.com/firmware/mlb/mlb_scoreboard_latest_partitions.bin",
+  "bootApp0File": "mlb_scoreboard_latest_boot_app0.bin",
+  "bootApp0Url": "https://sports-miniboards.com/firmware/mlb/mlb_scoreboard_latest_boot_app0.bin"
+}
